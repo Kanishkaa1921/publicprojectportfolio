@@ -1,0 +1,1055 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&display=swap");
+
+/* Navigation Fixes */
+nav {
+    display: flex;
+    gap: 30px;
+    background-color: rgba(0, 255, 132, 0.255);
+  }
+  
+  .nav-items {
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+    cursor: pointer;
+    padding: 5px 10px;
+    position: relative;
+    transition: color 0.3s;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+  }
+  
+  .nav-items:hover {
+    color: blanchedalmond;
+  }
+  
+/* Hover Effect on Spline Model */
+spline-viewer:hover ~ .cursor {
+    transform: scale(1.5);
+    background: rgba(255, 255, 255, 0.9);
+}
+@media (max-width: 768px) {
+    .spline-container {
+      height: 70vh; /* Reduce height for mobile */
+    }
+  }
+  
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "EB Garamond", serif; /* Use imported font */
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Main Container */
+#main {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fullscreen Spline Section */
+#spline-section {
+    width: 100vw;
+    height: 80vh; /* Full height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f1; /* Match background */
+}
+
+/* Spline Viewer Styling */
+spline-viewer {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+/* Page Styling */
+#page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 50vh;
+    background-color: rgba(255, 192, 203, 0.662);
+    overflow: hidden;
+}
+
+/* Text Animation */
+#loop h1 {
+    display: block;  /* Ensures each text appears on a new line */
+    font-size: 10rem;
+    white-space: nowrap; /* Prevents wrapping issues */
+    animation: fadeIn 5s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes textLoop {
+    0%, 50% { content: "WEB DEVELOPER"; }
+    33% { content: "BUSINESS ANALYST"; }
+    66% { content: "CONTENT WRITER"; }
+}
+
+/* Fade-in Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    #loop h1 {
+        font-size: 2.5rem;
+    }
+}
+/* Cards Container */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Centers the cards horizontally */
+    align-items: center; /* Aligns cards in the middle vertically */
+    max-width: 90%; /* Ensures the container does not stretch too wide */
+    margin: 2vh auto; /* Centers the container */
+    padding: 10px;
+}
+
+/* Individual Card */
+.card {
+    width: 160px;
+    height: 200px;
+    border-radius: 15px;
+    box-shadow: 0 0 9px rgba(255, 255, 255, 0.1);
+    background-color: rgb(231, 230, 250);
+    padding: 1vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover Effect - Glowing Border */
+.card:hover {
+    box-shadow: 0 0 15px #666666, 0 0 25px #333333; /* Grey and Dark Grey */
+    border: 2px solid #444444; /* Medium Grey Border */
+}
+
+/* Card Image */
+.card img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain; /* Ensures the image fits properly */
+}
+/* Responsive Fixes */
+@media (max-width: 1200px) {
+    #page1 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #right-section {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .cards {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .cards {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+
+/* Page Sections */
+#page1 {
+    position: relative;
+    height: 70vh;
+    width: 100vw;
+    background-color: rgba(255, 192, 203, 0.662);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Page 1 - Main Section */
+#page1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5vh 10vw;
+    height: 100vh; /* Ensure the section takes the full viewport height */
+}
+
+/* Fullscreen Spline Section */
+#spline-section {
+    flex: 1;
+    width: 30%; /* Adjust width as needed */
+    height: 70%; /* Take full height of the parent */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Ensure left alignment */
+    background-color:  rgba(255, 192, 203, 0.662);
+    padding-left: 5%; /* Further left shift */
+    overflow: hidden; /* Prevent overflow issues */
+}
+
+/* Spline Viewer Styling */
+spline-viewer-1 {
+    width: 150%; /* Increase width to make the model larger */
+    height: 150%; /* Increase height to make the model taller */
+    transform: scale(1.5) translateX(-15%); /* Scale up & shift left */
+    max-width: none;
+    max-height: none;
+}
+
+/* Right Section - Text & Cards */
+#right-section {
+    flex: 1;
+    width: 50%; /* Adjust width as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.733);
+    padding-left: 5%; /* Add padding for better spacing */
+}
+
+/* Introduction Text */
+#right-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #444444;
+}
+
+#right-section h3 {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666666;
+    max-width: 600px;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    #page1 {
+        flex-direction: column;
+        padding: 5vh 5vw;
+        height: auto;
+    }
+
+    #spline-section, #right-section {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    #spline-section {
+        height: 20vh; /* Adjust height for smaller screens */
+    }
+
+    spline-viewer {
+        transform: scale(1.2) translateX(-10%); /* Adjust scaling for smaller screens */
+    }
+
+    #right-section h1 {
+        font-size: 2rem;
+    }
+
+    #right-section h3 {
+        font-size: 1rem;
+    }
+}
+/* Page 2 - Work Experience */
+#page2 {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(137, 43, 226, 0.341);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#page2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5vh 10vw;
+    background-color: rgba(255, 192, 203, 0.662); /* Match your theme */
+    min-height: 100vh;
+}
+
+/* Work Experience Heading */
+#text1 {
+    font-size: 2.5rem;
+    color: #333333; /* Darker text for contrast */
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: fadeIn 2s ease-in-out; /* Faster fade-in animation */
+}
+
+/* Timeline Layout */
+.timeline {
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+/* Central Line */
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: rgba(51, 51, 51, 0.3); /* Semi-transparent line */
+    transform: translateX(-50%);
+    z-index: 1;
+    animation: drawLine 1.5s ease-in-out forwards; /* Line drawing animation */
+}
+
+/* Timeline Items */
+.timeline-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    margin: 50px 0;
+    width: 100%;
+    z-index: 2;
+    opacity: 0; /* Initially hidden */
+    animation: fadeInUp 0.5s ease-in-out forwards; /* Fade-in and slide-up animation */
+}
+
+/* Left-aligned Items */
+.timeline-item.left {
+    justify-content: flex-start;
+    animation-delay: 0.5s; /* Delay for staggered animation */
+}
+
+/* Right-aligned Items */
+.timeline-item.right {
+    justify-content: flex-end;
+    animation-delay: 1s; /* Delay for staggered animation */
+}
+
+/* Mini Circle (Timeline Dots) */
+.mini-circle {
+    width: 12px;
+    height: 12px;
+    background-color: #333; /* Darker dot */
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    box-shadow: 0 0 10px rgba(51, 51, 51, 0.8); /* Glow effect */
+    animation: popIn 0.5s ease-in-out forwards; /* Pop-in animation */
+    animation-delay: 1.5s; /* Delay for dot animation */
+}
+
+/* Content Box */
+.content {
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    width: 45%;
+    color: #333; /* Darker text for contrast */
+    box-shadow: 0 0 15px rgba(51, 51, 51, 0.3); /* Glow effect */
+    transition: 0.3s ease-in-out;
+    animation: fadeIn 0.5s ease-in-out forwards; /* Fade-in animation */
+    animation-delay: 1.5s; /* Delay for content animation */
+}
+
+/* Hover Effect */
+.content:hover {
+    box-shadow: 0 0 20px rgba(51, 51, 51, 0.5); /* Stronger glow on hover */
+    transform: translateY(-5px); /* Slight lift effect */
+}
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes drawLine {
+    from { height: 0; }
+    to { height: 100%; }
+}
+
+@keyframes popIn {
+    from { transform: translateX(-50%) scale(0); }
+    to { transform: translateX(-50%) scale(1); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #page2 {
+        padding: 5vh 5vw;
+    }
+
+    #text1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .timeline {
+        width: 100%;
+        padding-top: 30px;
+    }
+
+    .timeline-line {
+        left: 15px;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 30px 0;
+    }
+
+    .timeline-item.left,
+    .timeline-item.right {
+        justify-content: flex-start;
+    }
+
+    .content {
+        width: 90%;
+        margin-left: 30px; /* Adjust for mobile alignment */
+    }
+
+    .mini-circle {
+        left: 15px;
+    }
+}
+/* Page 3 - Roadmap Section */
+#page3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5vh 10vw;
+}
+
+/* Roadmap Section */
+.roadmap-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400%;
+    max-width: 1600px;
+    background-color:lavender ;
+    border: 0.5px solid rgba(107, 88, 116, 0.5);
+    border-top: 0;
+    padding: 20px;
+}
+
+.roadmap-section h1 {
+    font-size: 4rem; /* Responsive font size */
+    margin-top: 100px;
+    text-align: center;
+    color: #333; /* Darker text for contrast */
+}
+
+/* Roadmap Cards Container */
+.roadmap-cards-box {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* Individual Roadmap Card */
+.roadmap-card {
+    border: 0.5px solid rgba(107, 88, 116, 0.5);
+    position: relative;
+    height: 500px; /* Reduced height for better proportions */
+    width: 45%; /* Adjust width for responsiveness */
+    border-radius: 20px; /* Smoother border radius */
+    overflow: hidden;
+    background-color: #fff; /* White background for cards */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.roadmap-card:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.roadmap-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%; /* Adjust image height */
+    object-fit: cover; /* Ensure images fit properly */
+}
+
+.roadmap-card h2 {
+    position: absolute;
+    bottom: 25%; /* Adjusted position */
+    left: 8%;
+    font-size: 2rem; /* Responsive font size */
+    color: #333; /* Darker text for contrast */
+}
+
+.roadmap-card p {
+    position: absolute;
+    bottom: 5%;
+    left: 8%;
+    max-width: 78%;
+    font-size: 1.2rem; /* Responsive font size */
+    color: rgb(127, 109, 135); /* Subdued text color */
+    line-height: 1.5; /* Improved readability */
+}
+
+/* Button Box */
+.button-box {
+    width: 200px;
+    height: 70px;
+    margin: 50px 0;
+}
+
+.button-box button {
+    width: 100%;
+    height: 100%;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: #010115; /* Dark background */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-box button:hover {
+    background-color: #333; /* Darker background on hover */
+}
+
+/* Gradient Effect */
+.roadmap-gradient {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    z-index: -1;
+    box-shadow: 0 0 300px 300px rgba(181, 47, 226, 0.10);
+    mix-blend-mode: lighten;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .roadmap-card {
+        width: 45%; /* Adjust width for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .roadmap-section h1 {
+        font-size: 3rem; /* Smaller font size for mobile */
+        margin-top: 50px;
+    }
+
+    .roadmap-card {
+        width: 90%; /* Full width on mobile */
+        height: 400px; /* Reduced height for mobile */
+    }
+
+    .roadmap-card h2 {
+        font-size: 1.5rem; /* Smaller font size for mobile */
+    }
+
+    .roadmap-card p {
+        font-size: 1rem; /* Smaller font size for mobile */
+    }
+
+    .button-box {
+        margin: 30px 0;
+    }
+}
+/* Page 4 Layout */
+#page4 {
+    position: relative;
+    width: 100vw;
+    min-height: 50vh;
+    background-color: rgba(255, 162, 0, 0.427); /* Light orange background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5vh 10vw;
+}
+
+/* Roadmap Section */
+.achievement-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1600px;
+    background-color: rgba(64, 224, 208, 0.356); /* Light cyan */
+    border: 0.5px solid rgba(107, 88, 116, 0.5);
+    border-top: 0;
+    padding: 20px;
+}
+
+/* Roadmap Title */
+.achievement-section h1 {
+    font-size: 3rem; /* Responsive font size */
+    margin-top: 50px;
+    text-align: center;
+    color: #333; /* Darker text for contrast */
+}
+
+/* Slider Section */
+.slider {
+    width: 100%;
+    height: var(--height);
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+}
+
+/* Slider List */
+.slider .list {
+    display: flex;
+    width: 100%;
+    min-width: calc(var(--width) * var(--quantity));
+    position: relative;
+}
+
+/* Individual Slider Items */
+.slider .list .item {
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    left: 100%;
+    animation: autoRun 10s linear infinite;
+    transition: filter 0.5s;
+    animation-delay: calc((10s / var(--quantity)) * (var(--position) - 1) - 10s) !important;
+}
+
+.slider .list .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image maintains aspect ratio */
+}
+
+/* Automatic Sliding Animation */
+@keyframes autoRun {
+    from {
+        left: 100%;
+    }
+    to {
+        left: calc(var(--width) * -1);
+    }
+}
+
+/* Pausing Animation on Hover */
+.slider:hover .item {
+    animation-play-state: paused !important;
+    filter: grayscale(1);
+}
+
+.slider .item:hover {
+    filter: grayscale(0);
+}
+
+/* Reverse Slider Animation */
+.slider[reverse="true"] .item {
+    animation: reversePlay 10s linear infinite;
+}
+
+@keyframes reversePlay {
+    from {
+        left: calc(var(--width) * -1);
+    }
+    to {
+        left: 100%;
+    }
+}
+
+/* Page 5 Layout */
+#page5 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5vh 10vw;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Left Side: Coding Animation */
+.coding-animation {
+    flex: 1;
+    padding: 50px 20px;
+    background-color: rgba(255, 42, 0, 0.307); /* Light pink background */
+    color: rgba(0, 0, 0, 0.8); /* Dark text for readability */
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Code Container */
+.code-container {
+    max-width: 90%;
+    padding: 20px;
+    background-color: rgba(255, 234, 0, 0.351);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+pre {
+    margin: 0;
+}
+
+code {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Blinking Cursor */
+#code::after {
+    content: "|";
+    animation: blink 30s infinite;
+    color: #f4f4f4;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Right Side: Publications */
+.publications-section {
+    flex: 1;
+    padding: 50px 20px;
+    background-color: #fff;
+    overflow-y: auto;
+    max-height: 80vh; /* Prevents excessive overflow */
+}
+
+/* Publications Heading */
+.publications-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #0077b5;
+}
+
+/* Scroll Container */
+.scroll-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Publication Cards */
+.publication-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.publication-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.publication-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #0077b5;
+}
+
+.publication-card p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Read Paper Button */
+.read-paper {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0077b5;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.read-paper:hover {
+    background-color: #005582;
+}
+
+/* Contact Section - Page 6 */
+#page6 {
+    position: relative;
+    min-height: 50vh;
+    width: 100vw;
+    background-color: rgba(238, 130, 238, 0.351);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5vh 10vw;
+}
+
+/* Contact Form Box */
+.form-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px;
+    animation: slideIn 1s ease-out forwards;
+}
+
+/* Input Fields */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Input Focus Effects */
+input:focus, textarea:focus {
+    border-color: #4ca1af;
+    box-shadow: 0 0 5px #4ca1af;
+    outline: none;
+}
+
+/* Button Styles */
+.animated-button {
+    background: #4ca1af;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.animated-button:hover {
+    background: #2c3e50;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+
+/* Additional Styling */
+#loop {
+    display: flex;
+    position: absolute;
+    top: 30%;
+    height: 25%;
+    width: 100%;
+    font-size: 100px;
+    white-space: nowrap;
+    font-family: gilroy;
+}
+
+#loop>h1 {
+    font-weight: 400;
+    animation-name: anim;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#loop>h1>span {
+    -webkit-text-stroke: 1.2px #000;
+    color: transparent;
+    font-weight: 500;
+}
+
+@keyframes anim {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+#nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 7%;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    padding: 0px 30px;
+}
+
+#nav>h3 {
+    font-family: gilroy;
+    font-weight: 400;
+    font-size: 22px;
+}
+
+#nav>button {
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+}
+
+#page>h3 {
+    position: absolute;
+    top: 55%;
+    font-family: gilroy;
+    font-weight: 400;
+    color: #7c7c7c;
+    left: 5%;
+}
+
+#page>h4 {
+    position: absolute;
+    top: 62%;
+    left: 25%;
+    font-family: gilroy;
+    font-weight: 500;
+}
+
+#page1>#right-text {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+}
+
+#page1>#right-text>h3 {
+    font-weight: 400;
+    color: #7c7c7c;
+}
+
+#page1>#right-text>h1 {
+    line-height: 1.5;
+    font-size: 50px;
+}
+
+#page1>#left-text {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    text-align: end;
+}
+
+#page1>#left-text>h1 {
+    font-size: 50px;
+    line-height: 1.5;
+}
+
+#page1>#left-text>h3 {
+    color: #7c7c7c;
+    font-weight: 400;
+}
+
+#page2>#text1 {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+}
+
+#page2>#text1>h3 {
+    color: #7c7c7c;
+    font-weight: 400;
+}
+
+#page2>#text1>h1 {
+    font-size: 60px;
+    line-height: 1.5;
+}
+
+#page2>#text2 {
+    position: absolute;
+    top: 55%;
+    right: 10%;
+    text-align: end;
+}
+
+#page2>#text2>p {
+    color: #7c7c7c;
+    font-weight: 400;
+}
+
+#page3>#text3 {
+    position: absolute;
+    top: 40%;
+    right: 10%;
+    text-align: end;
+}
+
+#page3>#text3>h3 {
+    color: #7c7c7c;
+    font-weight: 400;
+}
+
+#page3>#text3>h1 {
+    font-size: 70px;
+}
