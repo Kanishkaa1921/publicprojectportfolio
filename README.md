@@ -41,13 +41,7 @@ This project is an **interactive 3D portfolio website** built using **Spline** a
 - Implement **code splitting** to load scripts efficiently.
 
 ## Live Demo
-[View Project](https://yourportfolio.com)
+[View Project](https://kanishkaasportfolio.netlify.app/)
 
-## Author
-**Your Name**  
-[LinkedIn](https://linkedin.com/in/yourprofile)  
-[GitHub](https://github.com/yourusername)  
-
-## License
-This project is licensed under the MIT License.
+![image](https://github.com/user-attachments/assets/fc04b442-adc5-4fa3-bf4c-bbc382f699e4)
 
